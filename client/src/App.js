@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
 const PLACES = [
-  { name: "Орск", zip: "514734" },
   { name: "Оренбург", zip: "515001" },
+  { name: "Орск", zip: "514734" },
   { name: "Актобе", zip: "610611" },
   { name: "Москва", zip: "5601538" },
   { name: "Сорочинск", zip: "490554" },
@@ -59,20 +60,38 @@ class App extends Component {
   render() {
     const activePlace = this.state.activePlace;
     return (
-      <div className="App">
-        {PLACES.map((place, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              this.setState({ activePlace: index });
-            }}
-          >
-            {place.name}
-          </button>
-        ))}
-        <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
-      </div>
-    );
+        <div>
+          <Navbar>
+            <Navbar.Header>
+              <Navbar.Brand>
+                Температура
+              </Navbar.Brand>
+            </Navbar.Header>
+          </Navbar>
+          <Grid>
+            <Row>
+              <Col className="col-3">
+                <h3>Выберете город</h3>
+                <Nav className="flex-column"
+                  bsStyle="pills"
+                  stacked
+                  activeKey={activePlace}
+                  onSelect={index => {
+                    this.setState({ activePlace: index });
+                  }}
+                >
+                  {PLACES.map((place, index) => (
+                    <NavItem key={index} eventKey={index}>{place.name}</NavItem>
+                  ))}
+                </Nav>
+              </Col>
+              <Col className="col">
+                <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
+              </Col>
+            </Row>
+          </Grid>
+        </div>
+      );
   }
 }
 

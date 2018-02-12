@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
+import axios from 'axios';
+
+
 const PLACES = [
   { name: "Оренбург", zip: "515001" },
   { name: "Орск", zip: "514734" },
@@ -11,6 +14,39 @@ const PLACES = [
   { name: "Мелеуз", zip: "527717" }
 
 ];
+
+class Huita extends Component
+{
+  constructor(props)
+  {
+    super(props);
+
+    this.state = {
+      qq: {}
+    };
+  }
+  componentDidMount()
+  {
+    fetch('http://127.0.0.1:5000/api/info').then(res=>res.json()).then(json =>
+  {
+    console.log(json);
+    this.setState({qq : json});
+  })
+  }
+
+  render()
+  {
+
+  return (<div><h1>Ebaaa </h1><h2>Server system time: {this.state.qq.systemTime}</h2>
+  <h2>OS info: {this.state.qq.OSInfo}</h2>
+  <h2>Uptime: {this.state.qq.uptime}</h2>
+    </div>);
+  }
+  
+
+}
+
+
 
 
 class WeatherDisplay extends Component {
@@ -87,9 +123,13 @@ class App extends Component {
               </Col>
               <Col className="col">
                 <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
+               
               </Col>
+              
             </Row>
+            <Huita/>
           </Grid>
+         
         </div>
       );
   }

@@ -1,0 +1,10 @@
+c:\source\csharp\DiplomApp\bin\Debug\netcoreapp2.0\DiplomApp.deps.json
+c:\source\csharp\DiplomApp\bin\Debug\netcoreapp2.0\DiplomApp.runtimeconfig.json
+c:\source\csharp\DiplomApp\bin\Debug\netcoreapp2.0\DiplomApp.runtimeconfig.dev.json
+c:\source\csharp\DiplomApp\bin\Debug\netcoreapp2.0\DiplomApp.dll
+c:\source\csharp\DiplomApp\bin\Debug\netcoreapp2.0\DiplomApp.pdb
+c:\source\csharp\DiplomApp\obj\Debug\netcoreapp2.0\DiplomApp.csproj.CoreCompileInputs.cache
+c:\source\csharp\DiplomApp\obj\Debug\netcoreapp2.0\DiplomApp.AssemblyInfoInputs.cache
+c:\source\csharp\DiplomApp\obj\Debug\netcoreapp2.0\DiplomApp.AssemblyInfo.cs
+c:\source\csharp\DiplomApp\obj\Debug\netcoreapp2.0\DiplomApp.dll
+c:\source\csharp\DiplomApp\obj\Debug\netcoreapp2.0\DiplomApp.pdb

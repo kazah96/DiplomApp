@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import { Navbar, NavItem, Nav, Grid, Row, Col } from "react-bootstrap";
-import axios from 'axios';
+
 
 
 const PLACES = [
@@ -42,7 +42,7 @@ class Huita extends Component
   <h2>Uptime: {this.state.qq.uptime}</h2>
     </div>);
   }
-  
+
 
 }
 
@@ -123,13 +123,13 @@ class App extends Component {
               </Col>
               <Col className="col">
                 <WeatherDisplay key={activePlace} zip={PLACES[activePlace].zip} />
-               
+
               </Col>
-              
+
             </Row>
             <Huita/>
           </Grid>
-         
+
         </div>
       );
   }
